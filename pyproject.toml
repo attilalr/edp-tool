@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edp-tool"
+version = "0.2.0"
+description = "Empirical Dependence Plot (EDP): a model-free EDA plot of a target's conditional mean/rate across a feature."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "attilalr", email = "attila.leaes@gmail.com" }]
+keywords = ["eda", "visualization", "partial-dependence", "empirical-dependence", "matplotlib"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+dependencies = [
+    "numpy>=1.20",
+    "pandas>=1.2",
+    "matplotlib>=3.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/attilalr/pdp-tool"
+
+[tool.setuptools]
+py-modules = ["edp_tool", "pdp_tool"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
