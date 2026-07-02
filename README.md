@@ -27,7 +27,7 @@ Just copy `edp_tool.py` next to your notebook, or from Colab:
 
 ```python
 import os
-url = 'https://raw.githubusercontent.com/attilalr/pdp-tool/main/edp_tool.py'
+url = 'https://raw.githubusercontent.com/attilalr/edp-tool/main/edp_tool.py'
 if not os.path.isfile('edp_tool.py'):
     !wget -q {url}
 from edp_tool import edp
