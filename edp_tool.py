@@ -29,7 +29,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-__all__ = ["edp"]
+__version__ = "0.2.0"
+
+__all__ = ["edp", "__version__"]
 
 # z-score for a two-sided 95% confidence interval.
 _Z_95 = 1.959963984540054

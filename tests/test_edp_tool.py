@@ -13,7 +13,13 @@ import numpy as np
 import pandas as pd
 import pytest
 
+import edp_tool
 from edp_tool import edp, _wilson_interval, _make_continuous_groups
+
+
+def test_module_exposes_version():
+    assert isinstance(edp_tool.__version__, str)
+    assert edp_tool.__version__.count(".") >= 1
 
 
 # --------------------------------------------------------------------------- #

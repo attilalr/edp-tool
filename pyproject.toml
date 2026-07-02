@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "edp-tool"
-version = "0.2.0"
+dynamic = ["version"]
 description = "Empirical Dependence Plot (EDP): a model-free EDA plot of a target's conditional mean/rate across a feature."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -31,6 +31,9 @@ Homepage = "https://github.com/attilalr/edp-tool"
 
 [tool.setuptools]
 py-modules = ["edp_tool", "pdp_tool"]
+
+[tool.setuptools.dynamic]
+version = { attr = "edp_tool.__version__" }
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
