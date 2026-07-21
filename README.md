@@ -1,5 +1,9 @@
 # edp-tool — Empirical Dependence Plot (EDP)
 
+[![PyPI](https://img.shields.io/pypi/v/edp-tool.svg)](https://pypi.org/project/edp-tool/)
+[![Python versions](https://img.shields.io/pypi/pyversions/edp-tool.svg)](https://pypi.org/project/edp-tool/)
+[![License: MIT](https://img.shields.io/pypi/l/edp-tool.svg)](LICENSE)
+
 A small exploratory-data-analysis tool that shows how a target variable behaves
 across grouped values of a feature. It is designed with **categorical / binary
 targets** in mind (it plots the observed class rate), but it also works for
@@ -23,7 +27,22 @@ The old `pdp` function still works as a deprecated alias (see below).
 
 ## Install
 
-Just copy `edp_tool.py` next to your notebook, or from Colab:
+```bash
+pip install edp-tool
+```
+
+In a notebook / Colab cell:
+
+```python
+!pip install -q edp-tool
+from edp_tool import edp
+```
+
+The distribution is published on PyPI as
+[`edp-tool`](https://pypi.org/project/edp-tool/); the import name is `edp_tool`
+(`pip install edp_tool` also works — pip normalizes the two spellings).
+
+Alternatively, just copy `edp_tool.py` next to your notebook:
 
 ```python
 import os
@@ -33,7 +52,8 @@ if not os.path.isfile('edp_tool.py'):
 from edp_tool import edp
 ```
 
-Requirements: `numpy`, `pandas`, `matplotlib` (see `requirements.txt`).
+Requirements: `numpy`, `pandas`, `matplotlib` (installed automatically by pip;
+see also `requirements.txt`).
 
 ## Usage
 
@@ -86,7 +106,9 @@ Multiclass targets are handled natively — no manual one-hot encoding needed.
 ## Development
 
 ```bash
-pip install -r requirements.txt pytest
+git clone https://github.com/attilalr/edp-tool
+cd edp-tool
+pip install -e ".[dev]"
 pytest
 ```
 
